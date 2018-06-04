@@ -580,9 +580,14 @@ char c = 'a';                                                        // holds th
 		{
 			fprintf(list, "\n Program ran without errors\n");
 			fprintf(tempfile,"\n //Program compiled without errors\n");
+			printf("\n Program compiled without errors\n");
 		}
 		else
+		{
 			fprintf(tempfile, "\n //Program compiled with %d errors\n", error_count+syntax_error_count);
+			printf("\n Program compiled with %d Lexical Errors\n", error_count);
+			printf("Program compiled with %d Syntax Errors\n", syntax_error_count);
+		}
 	//return token;//format print to the lisiting file the msg containign the number of lexical errors gotten from error_count
 	}
 	if((token == NEWLINE && linebuffer[0] != '\n') || token == SEMICOLON  || token == SCANEOF  || token == COMMENT)
